@@ -1,0 +1,1114 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* start of my styling */
+
+* {
+	box-sizing: border-box;
+  }
+
+.container {
+    display: grid;
+	grid-template-columns: 1fr 3.75fr 1fr;
+	grid-template-areas:
+	"header header header"
+	". banner ."
+	". emailform ."
+	"footer footer footer";
+	row-gap: 0.5rem;
+	background-color: #fafafaef;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header {
+	grid-area: header;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.75fr 1fr;
+    grid-template-areas: ". logo nav .";
+}
+
+.header img {
+    height: 5rem;
+    width: auto;
+    margin: 0.5rem;
+    grid-area: logo;
+}
+
+.header nav{
+    grid-area: nav;
+	display: grid;
+    background-color: none;
+	justify-content:center;
+	align-items: baseline;
+	grid-template-areas: 
+	". home about works hire .";	
+}
+
+.home {
+	grid-area: home;
+}
+
+.about {
+	grid-area: about;
+}
+
+.works {
+	grid-area: works;
+}
+
+.hire {
+	grid-area: hire;
+}
+
+.header nav a{    
+    text-decoration: none;
+	align-self: flex-end;
+	margin: 0 0.5rem 0 0.5rem;
+    padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+	justify-self: center;
+	color: azure;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.home:hover, .about:hover, .works:hover, .hire:hover {
+    background-color: rgb(20, 19, 19);
+}
+
+/* Banner */
+
+
+.banner {
+	grid-area: banner;
+	background-color: white;
+	display: grid;
+	grid-template-columns: 1.2fr 0.8fr;
+	grid-template-areas:
+	"texter cartoon"
+	"ptext cartoon"
+	"social cartoon"
+	"social cartoon"
+	"social cartoon";
+	justify-items: center;
+	align-items: center;
+	color: #908989;
+}
+
+#bannerh1 {
+	grid-area: texter;
+	font-size: 5rem;
+	margin: 1rem 0 1rem 0;
+
+}
+
+#bannerp {
+	grid-area: ptext;
+	font-size: 2rem;
+	margin: 1rem 0 1rem 0;
+	padding: 0 2rem 0 4rem;
+	line-height: 1.5;
+}
+
+.social {
+	grid-area: social;
+}
+
+.social li {
+	display: inline;
+	margin: 2rem 2rem 2rem 2rem;
+}
+
+.social a{
+	width: 5rem;
+}
+
+.cartoon {
+	grid-area: cartoon;
+	max-width: 23em;
+	height: auto;
+	margin-bottom: 1rem;
+}
+
+/* Social Icons */
+
+.fa {
+	padding: 1.5rem;
+	font-size: 3rem;
+	width: 2rem;
+	text-align: center;
+	text-decoration: none;
+	border-radius: 50%;
+	color: #0066cc;
+  }
+
+.fa:hover {
+	color: rgb(31, 104, 104);
+}
+
+  /* End of Social Icons */
+
+  /* Contact Form */
+
+  .emailform {
+	grid-area: emailform;
+	display: grid;
+	grid-template-columns: 20% 1fr 20%;
+	grid-template-areas:
+	". contactform .";
+	margin-bottom: 1rem;
+  }
+
+  .contactform {
+	grid-area: contactform;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 20px;
+  }
+
+  /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+	width: 100%; /* Full width */
+	padding: 12px; /* Some padding */ 
+	border: 1px solid #ccc; /* Gray border */
+	border-radius: 4px; /* Rounded borders */
+	box-sizing: border-box; /* Make sure that padding and width stays in place */
+	margin-top: 6px; /* Add a top margin */
+	margin-bottom: 16px; /* Bottom margin */
+	resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+	background-color: #0066cc;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+	background-color: rgb(31, 104, 104);
+  }
+
+  /* End of Contact Form */
+
+  /* footer */ 
+
+
+  .footer {
+	grid-area: footer;
+	display: grid;
+	grid-template-columns: 1fr 3.75fr 1fr;
+	grid-template-areas:
+	". copyright .";
+	height: 5rem;
+    background-color: #f5f5f5;
+}
+	.copyright {
+		grid-area: copyright;
+		color: #908989;
+		margin-top: 1rem;
+		font-weight: 800;
+		font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		
+}
+
+
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& MEDIA QUARIES &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+/* --------- 390px --------- */
+
+@media (max-width: 390px) {
+
+	.container {
+		max-width: 390px;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"header"
+		"banner"
+		"emailform"
+		"footer";
+	}
+
+	/* logo and menu place */
+	
+	
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "logo"
+        "nav";
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .header img {
+        margin-top: 1rem;
+    }
+    
+    .header nav{
+        grid-template-areas: 
+        "home about works hire";	
+    }
+    
+    
+    .header nav a{    
+        margin: 0 0 0 0;
+    }
+	
+	/* Banner */
+	
+	
+	.banner {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"texter"
+		"ptext"
+		"social" 
+		"cartoon";
+		justify-items: center;
+		align-items: center;
+		color: #908989;
+	}
+	
+	#bannerh1 {
+		grid-area: texter;
+		font-size: 2rem;
+		margin: 1rem 0 1rem 0;
+		font-weight: 700;
+	
+	}
+	
+	#bannerp {
+		grid-area: ptext;
+		font-size: 1.5rem;
+		margin: 0.5rem 0 0.5rem 0;
+		padding: 0 1rem 0 2rem;
+		line-height: 1.5;
+		text-align: justify;
+	}
+	
+	.social {
+		grid-area: social;
+	}
+	
+	.social li {
+		display: inline;
+		margin: 1rem 1rem 1rem 1rem;
+	}
+	
+	.social a{
+		width: 3rem;
+	}
+	
+	.cartoon {
+		max-width: 10rem;
+	}
+	
+	/* Social Icons */
+	
+	
+	
+	  /* End of Social Icons */
+	
+	  /* Contact Form */
+	
+	  .emailform {
+		grid-template-columns: 3% 1fr 3%;
+		grid-template-areas:
+		". contactform .";
+	  }
+	
+	  /* End of Contact Form */
+	
+	  /* footer */ 
+	
+	
+	  .footer {
+		grid-template-columns: 3% 1fr 3%;
+	  }
+
+}
+
+/* --------- 480px --------- */
+
+@media (max-width: 480px) and (min-width: 391px) {
+	.container {
+		max-width: 480px;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"header"
+		"banner"
+		"emailform"
+		"footer";
+	}
+
+	
+	/* logo and menu place */
+	
+	
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "logo"
+        "nav";
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .header img {
+        margin-top: 1rem;
+    }
+    
+    .header nav{
+        grid-template-areas: 
+        "home about works hire";	
+    }
+    
+    
+    .header nav a{    
+        margin: 0 0 0 0;
+    }
+	
+	/* Banner */
+	
+	
+	.banner {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"texter"
+		"ptext"
+		"social" 
+		"cartoon";
+		justify-items: center;
+		align-items: center;
+		color: #908989;
+	}
+	
+	#bannerh1 {
+		grid-area: texter;
+		font-size: 2rem;
+		margin: 1rem 0 1rem 0;
+		font-weight: 700;
+	
+	}
+	
+	#bannerp {
+		grid-area: ptext;
+		font-size: 1.5rem;
+		margin: 0.5rem 0 0.5rem 0;
+		padding: 0 1rem 0 2rem;
+		line-height: 1.5;
+		text-align: justify;
+	}
+	
+	.social {
+		grid-area: social;
+	}
+	
+	.social li {
+		display: inline;
+		margin: 1rem 1rem 1rem 1rem;
+	}
+	
+	.social a{
+		width: 3rem;
+	}
+	
+	.cartoon {
+		max-width: 10rem;
+	}
+	
+	/* Social Icons */
+	
+	
+	
+	  /* End of Social Icons */
+	
+	  /* Contact Form */
+	
+	  .emailform {
+		grid-template-columns: 3% 1fr 3%;
+		grid-template-areas:
+		". contactform .";
+	  }
+	
+	  /* End of Contact Form */
+	
+	  /* footer */ 
+	
+	
+	  .footer {
+		grid-template-columns: 3% 1fr 3%;
+	  }
+
+}
+
+/* --------- 565px --------- */
+
+@media (max-width: 565px) and (min-width: 481px) {
+	.container {
+		max-width: 565px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+		"header header"
+		"banner banner"
+		"emailform emailform"
+		"footer footer";
+	}
+
+	
+	/* logo and menu place */
+	
+	
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "logo"
+        "nav";
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .header img {
+        margin-top: 1rem;
+    }
+    
+    .header nav{
+        grid-template-areas: 
+        "home about works hire";	
+    }
+    
+    
+    .header nav a{    
+        margin: 0 0 0 0;
+    }
+	
+	/* Banner */
+	
+	
+	.banner {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"texter"
+		"ptext"
+		"social" 
+		"cartoon";
+		justify-items: center;
+		align-items: center;
+		color: #908989;
+	}
+	
+	#bannerh1 {
+		grid-area: texter;
+		font-size: 2rem;
+		margin: 1rem 0 1rem 0;
+		font-weight: 700;
+	
+	}
+	
+	#bannerp {
+		grid-area: ptext;
+		font-size: 1.5rem;
+		margin: 0.5rem 0 0.5rem 0;
+		padding: 0 1rem 0 2rem;
+		line-height: 1.5;
+		text-align: justify;
+	}
+	
+	.social {
+		grid-area: social;
+	}
+	
+	.social li {
+		display: inline;
+		justify-content: space-between;
+	}
+	
+	.social a{
+		width: 3rem;
+	}
+	
+	.cartoon {
+		max-width: 10rem;
+	}
+	
+	/* Social Icons */
+	
+	
+	
+	  /* End of Social Icons */
+	
+	  /* Contact Form */
+	
+	  .emailform {
+		grid-template-columns: 3% 1fr 3%;
+		grid-template-areas:
+		". contactform .";
+	  }
+	
+	  /* End of Contact Form */
+	
+	  /* footer */ 
+	
+	
+	  .footer {
+		grid-template-columns: 3% 1fr 3%;
+	  }
+}
+
+/* ------------ 600px ------------ */
+
+@media (max-width: 600px) and (min-width: 566px) {
+
+	.container {
+		max-width: 600px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+		"header header"
+		"banner banner"
+		"emailform emailform"
+		"footer footer";
+	}
+
+	
+	/* logo and menu place */
+	
+	
+    .header {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "logo"
+        "nav";
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .header img {
+        margin-top: 1rem;
+    }
+    
+    .header nav{
+        grid-template-areas: 
+        "home about works hire";	
+    }
+    
+    
+    .header nav a{    
+        margin: 0 0 0 0;
+    }
+	
+	/* Banner */
+	
+	
+	.banner {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"texter"
+		"ptext"
+		"social" 
+		"cartoon";
+		justify-items: center;
+		align-items: center;
+		color: #908989;
+	}
+	
+	#bannerh1 {
+		grid-area: texter;
+		font-size: 2rem;
+		margin: 1rem 0 1rem 0;
+		font-weight: 700;
+	
+	}
+	
+	#bannerp {
+		grid-area: ptext;
+		font-size: 1.5rem;
+		margin: 0.5rem 0 0.5rem 0;
+		padding: 0 1rem 0 2rem;
+		line-height: 1.5;
+		text-align: justify;
+	}
+	
+	.social {
+		grid-area: social;
+	}
+	
+	.social li {
+		display: inline;
+		justify-content: space-between;
+	}
+	
+	.social a{
+		width: 3rem;
+	}
+	
+	.cartoon {
+		max-width: 10rem;
+	}
+	
+	/* Social Icons */
+	
+	
+	
+	  /* End of Social Icons */
+	
+	  /* Contact Form */
+	
+	  .emailform {
+		grid-template-columns: 3% 1fr 3%;
+		grid-template-areas:
+		". contactform .";
+	  }
+	
+	  /* End of Contact Form */
+	
+	  /* footer */ 
+	
+	
+	  .footer {
+		grid-template-columns: 3% 1fr 3%;
+	  }
+}
+
+/* ------------- 768px ---------- */
+
+@media (max-width: 768px) and (min-width: 601px) {
+		
+	.container {
+		max-width: 768px;
+		display: grid;
+		grid-template-columns: 5% 1fr 5%;
+	}
+
+	
+	.header {
+        grid-template-columns: 0.7fr 1.3fr;
+        grid-template-areas: "logo nav";
+        justify-items: center;
+        align-items: center;
+    }
+
+    .header img {
+        padding-top: 1rem;
+        height: 5rem;
+    }
+
+    .header nav{
+        height: 5rem;
+       	
+    }
+	/* Banner */
+
+
+	.banner {
+		grid-template-columns: 1.3fr 0.7fr;
+		grid-template-areas:
+		"texter cartoon"
+		"ptext cartoon"
+		"social social";
+		justify-items: center;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		color: #908989;
+	}
+
+	#bannerh1 {
+		font-size: 2.5rem;
+		margin: 1rem 0 1rem 0;
+	}
+
+	#bannerp {
+		font-size: 1.5rem;
+		margin: 1rem 0 1rem 0;
+		padding: 0 2rem 0 3rem;
+		text-align: justify;
+	}
+
+
+	.social li {
+		display: inline;
+		margin: 1rem;
+	}
+
+	.social a{
+		width: 5rem;
+	}
+
+	.cartoon {
+		grid-area: cartoon;
+		max-width: 10em;
+		height: auto;
+		margin-bottom: 1rem;
+	}
+
+	/* Social Icons */
+
+	.fa {
+		padding: 1.5rem;
+		font-size: 3rem;
+		width: 2rem;
+		text-align: center;
+		text-decoration: none;
+		border-radius: 50%;
+		color: #0066cc;
+	}
+
+	.fa:hover {
+		color: rgb(31, 104, 104);
+	}
+
+	/* End of Social Icons */
+
+	/* Contact Form */
+
+	.emailform {
+		grid-template-columns: 1fr;
+	}
+
+	/* End of Contact Form */
+
+	/* footer */ 
+
+
+	.footer {
+		grid-template-columns: 5% 1fr 5%;
+	}
+	
+}
+
+
+/* ---------- 1024px ----------- */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+
+	.container {
+		max-width: 1024px;
+		display: grid;
+		grid-template-columns: 10% 1fr 10%;
+	}
+
+	.header {
+        grid-template-columns: 0.7fr 1.3fr;
+        grid-template-areas: "logo nav";
+        justify-items: center;
+        align-items: center;
+    }
+
+    .header img {
+        padding-top: 1rem;
+        height: 5rem;
+    }
+
+    .header nav{
+        height: 5rem;
+       	
+    }
+
+	
+	.banner {
+		grid-template-columns: 1.3fr 0.7fr;
+		grid-template-areas:
+		"texter cartoon"
+		"ptext cartoon"
+		"social social";
+		justify-items: center;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		color: #908989;
+	}
+
+	#bannerh1 {
+		font-size: 2.5rem;
+		margin: 1rem 0 0rem 0;
+	}
+
+	#bannerp {
+		font-size: 1.5rem;
+		margin: 0.5rem 0 0.5rem 0;
+		padding: 0 2rem 0 3rem;
+		text-align: justify;
+		line-height: 1.5;
+	}
+
+
+	.social li {
+		display: inline;
+		margin: 1rem;
+	}
+
+	.social a{
+		width: 5rem;
+	}
+
+	.cartoon {
+		grid-area: cartoon;
+		max-width: 15em;
+		height: auto;
+		margin-bottom: 1rem;
+	}
+
+	/* Social Icons */
+
+	.fa {
+		padding: 1.5rem;
+		font-size: 3rem;
+		width: 2rem;
+		text-align: center;
+		text-decoration: none;
+		border-radius: 50%;
+		color: #0066cc;
+	}
+
+	.fa:hover {
+		color: rgb(31, 104, 104);
+	}
+
+	/* End of Social Icons */
+
+	/* Contact Form */
+
+	.emailform {
+		grid-template-columns: 1fr;
+	}
+
+	/* End of Contact Form */
+
+	/* footer */ 
+
+
+	.footer {
+		grid-template-columns: 5% 1fr 5%;
+	}
+	
+}
+
+/* ----------- 1025 ---------------*/
+
+@media (max-width: 1200px) and (min-width: 1025px) {
+
+	.container {
+		max-width: 1200px;
+		display: grid;
+		grid-template-columns: 10% 1fr 10%;
+	}
+
+	.header {
+        grid-template-columns: 0.7fr 1.3fr;
+        grid-template-areas: "logo nav";
+        justify-items: center;
+        align-items: center;
+    }
+
+    .header img {
+        padding-top: 1rem;
+        height: 5rem;
+    }
+
+    .header nav{
+        height: 5rem;
+       	
+    }
+
+	
+	.banner {
+		grid-template-columns: 1.3fr 0.7fr;
+		grid-template-areas:
+		"texter cartoon"
+		"ptext cartoon"
+		"social social";
+		justify-items: center;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		color: #908989;
+	}
+
+	#bannerh1 {
+		font-size: 2.5rem;
+		margin: 1rem 0 0rem 0;
+	}
+
+	#bannerp {
+		font-size: 1.5rem;
+		margin: 0.5rem 0 0.5rem 0;
+		padding: 0 2rem 0 3rem;
+		text-align: justify;
+		line-height: 1.5;
+	}
+
+
+	.social li {
+		display: inline;
+		margin: 1rem;
+	}
+
+	.social a{
+		width: 5rem;
+	}
+
+	.cartoon {
+		grid-area: cartoon;
+		max-width: 15em;
+		height: auto;
+		margin-bottom: 1rem;
+	}
+
+	/* Social Icons */
+
+	.fa {
+		padding: 1.5rem;
+		font-size: 3rem;
+		width: 2rem;
+		text-align: center;
+		text-decoration: none;
+		border-radius: 50%;
+		color: #0066cc;
+	}
+
+	.fa:hover {
+		color: rgb(31, 104, 104);
+	}
+
+	/* End of Social Icons */
+
+	/* Contact Form */
+
+	
+	.emailform {
+		grid-template-columns: 5% 1fr 5%;
+	}
+	
+	/* End of Contact Form */
+
+	/* footer */ 
+
+
+	.footer {
+		grid-template-columns: 5% 1fr 5%;
+	}
+
+
+}
+
+/* --------- 1501px -------------*/
+
+@media (max-width: 1900px) and (min-width: 1201px) {
+
+	.container {
+		display: grid;
+		grid-template-columns: 15% 1fr 15%;
+	}
+
+	.header {
+		grid-template-columns: 15% 1fr 1fr 15%;
+	}
+
+	.header img {
+		margin: 1rem;
+	}
+
+	/* Banner */
+
+
+	.banner {
+		grid-area: banner;
+		background-color: white;
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+	}
+
+	#bannerh1 {
+		font-size: 3rem;
+		margin: 1rem 0 1rem 0;
+
+	}
+
+	#bannerp {
+		font-size: 1.7rem;
+		margin: 1rem 0 1rem 0;
+		padding: 0 2rem 0 4rem;
+	}
+
+	.social li {
+		display: inline;
+		margin: 1rem;
+	}
+
+	.cartoon {
+		max-width: 21em;
+	}
+
+	/* Social Icons */
+
+	/* End of Social Icons */
+
+	/* Contact Form */
+
+	.emailform {
+		grid-template-columns: 5% 1fr 5%;
+	}
+/* End of Contact Form */
+
+	/* footer */ 
+
+
+	.footer {
+		grid-template-columns: 15% 1fr 15%;
+	}
+		
+}

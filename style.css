@@ -1,0 +1,1000 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* start of my styling */
+
+* {
+	box-sizing: border-box;
+  }
+
+.container {
+    display: grid;
+	grid-template-columns: 1fr 3.75fr 1fr;
+	grid-template-areas:
+	"header header header"
+	". banner ."
+	". portfolioicons ."
+	"footer footer footer";
+	row-gap: 0.5rem;
+	background-color: #fafafaef;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.header {
+	grid-area: header;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.75fr 1fr;
+    grid-template-areas: ". logo nav .";
+}
+
+.header img {
+    height: 5rem;
+    width: auto;
+    margin: 0.5rem;
+    grid-area: logo;
+}
+
+.header nav{
+    grid-area: nav;
+	display: grid;
+    background-color: none;
+	justify-content:center;
+	align-items: baseline;
+	grid-template-areas: 
+	". home about works hire .";	
+}
+
+.home {
+	grid-area: home;
+}
+
+.about {
+	grid-area: about;
+}
+
+.works {
+	grid-area: works;
+}
+
+.hire {
+	grid-area: hire;
+}
+
+.header nav a{    
+    text-decoration: none;
+	align-self: flex-end;
+	margin: 0 0.5rem 0 0.5rem;
+    padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+	justify-self: center;
+	color: azure;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.home:hover, .about:hover, .works:hover, .hire:hover {
+    background-color: rgb(20, 19, 19);
+}
+
+/* Banner */
+
+.banner {
+	grid-area: banner;
+	background-color: white;
+	display: grid;
+	grid-template-columns: 1.2fr 0.8fr;
+}
+
+.banner p {
+	margin: 1rem 1rem 0.5rem 0;
+    font-size: 1.9rem;
+    font-family: 'Niconne', cursive;
+    line-height: 2;
+    color: #0a3055;
+    font-weight: 500;
+	padding-right: 3rem;
+}
+
+.banner span {
+	font-size: 7rem;
+    color: red;
+    line-height: normal;
+}
+
+.banner img {
+	margin: 0.5rem 0 0.5rem 1rem;
+}
+
+/* Portfolio */
+
+.portfolioicons {
+	grid-area: portfolioicons;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0.5rem;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	background-color: none;
+}
+
+.portelement {
+	width: 19rem;
+    height: 12rem;
+	display: grid;
+    background-color: white;
+	justify-content: center;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.portelement h3 {
+	font-weight: 600;
+}
+
+.portelement:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.footer {
+	grid-area: footer;
+	display: grid;
+	grid-template-columns: 1fr 3.75fr 1fr;
+	grid-template-areas:
+	". copyright .";
+	height: 5rem;
+    background-color: #f5f5f5;
+}
+
+.copyright {
+	grid-area: copyright;
+	color: #908989;
+    margin-top: 1rem;
+    font-weight: 800;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	
+}
+
+/* Media Quaries for all */
+
+
+@media (max-width: 390px) {
+	.container {
+		max-width: 480px;
+	}
+	
+	.header {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"logo"
+		"nav";
+	}
+	
+	.header img {
+		justify-self: center;
+		height: 3rem;
+		width: auto;
+	}
+	
+	.header nav{
+		grid-template-areas: 
+		"home about works hire";
+		justify-self: center;	
+	}
+	
+	.header nav a{    
+		font-size: 1rem;
+	}
+	
+	
+	/* Banner */
+	
+	.banner {
+		grid-template-columns: 1fr;
+		
+	}
+	
+	.banner p {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.5rem;
+		padding: 0 0 0 1.5rem;
+		line-height: normal;
+		justify-self: center;
+	}
+	
+	.banner span {
+		font-size: 3rem;
+	}
+	
+	.banner img {
+		margin: 0.5rem 0 0 1rem;
+		max-width: 300px;
+		height: auto;
+		justify-self: center;
+	}
+	
+	/* Portfolio */
+	
+	.portfolioicons {
+		grid-template-columns: 1fr;
+	}
+	
+	.portelement {
+		width: 23rem;
+		height: 15rem;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+	}
+	
+	.portelement h3 {
+		font-weight: 600;
+		font-size: 1.2rem;
+	}
+
+	.portelement img {
+		width: 20rem;
+		height: auto; 
+	};
+}
+
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+@media (max-width: 480px) and (min-width: 391px) {
+	.container {
+		max-width: 480px;
+	}
+	
+	.header {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"logo"
+		"nav";
+	}
+	
+	.header img {
+		justify-self: center;
+		height: 3rem;
+		width: auto;
+	}
+	
+	.header nav{
+		grid-template-areas: 
+		"home about works hire";
+		justify-self: center;	
+	}
+	
+	.header nav a{    
+		font-size: 1rem;
+	}
+	
+	
+	/* Banner */
+	
+	.banner {
+		grid-template-columns: 1fr;
+		
+	}
+	
+	.banner p {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.5rem;
+		padding: 0 0 0 1.5rem;
+		line-height: normal;
+		justify-self: center;
+	}
+	
+	.banner span {
+		font-size: 3rem;
+	}
+	
+	.banner img {
+		margin: 0.5rem 0 0 1rem;
+		max-width: 300px;
+		height: auto;
+		justify-self: center;
+	}
+	
+	/* Portfolio */
+	
+	.portfolioicons {
+		grid-template-columns: 1fr;
+	}
+	
+	.portelement {
+		width: 23rem;
+		height: 15rem;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+	}
+	
+	.portelement h3 {
+		font-weight: 600;
+		font-size: 1.2rem;
+	}
+
+	.portelement img {
+		width: 20rem;
+		height: auto; 
+	};
+}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+
+@media (max-width: 565px) and (min-width: 481px) {
+	.container {
+		max-width: 560px;
+	}
+	
+	.header {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"logo"
+		"nav";
+	}
+	
+	.header img {
+		justify-self: center;
+	}
+	
+	.header nav{
+		grid-template-areas: 
+		"home about works hire";
+		justify-self: center;	
+	}
+	
+	.header nav a{    
+		font-size: 1rem;
+	}
+	
+	
+	/* Banner */
+	
+	.banner {
+		grid-template-columns: 1fr;
+		
+	}
+	
+	.banner p {
+		margin: 0 0 0.5rem 0;
+		font-size: 1.5rem;
+		padding: 0 0 0 1.5rem;
+		line-height: normal;
+		justify-self: center;
+	}
+	
+	.banner span {
+		font-size: 3rem;
+	}
+	
+	.banner img {
+		margin: 0.5rem 0 0 1rem;
+		max-width: 300px;
+		height: auto;
+		justify-self: center;
+	}
+	
+	/* Portfolio */
+	
+	.portfolioicons {
+		grid-template-columns: 1fr;
+	}
+	
+	.portelement {
+		width: 25rem;
+		height: 17rem;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+	}
+	
+	.portelement h3 {
+		font-weight: 600;
+		font-size: 1.2rem;
+	}
+
+	.portelement img {
+		width: 22rem;
+		height: auto; 
+	};
+}
+
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+
+@media (max-width: 600px) and (min-width: 566px) {
+	.container {
+		max-width: 600px;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"header"
+		"banner"
+		"portfolioicons"
+		"footer";
+		row-gap: 0.5rem;
+		background-color: #fafafaef;
+	}
+	
+	.header {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"logo"
+		"nav";
+	}
+	
+	.header img {
+		justify-self: center;
+		height: 5rem;
+	}
+	
+	.header nav{
+		grid-template-areas: 
+		"home about works hire";
+		justify-self: center;	
+	}
+	
+	.header nav a{    
+		font-size: 1rem;
+	}
+	
+	
+	/* Banner */
+	
+	.banner {
+		grid-template-columns: 2fr;
+		grid-template-areas: 
+		"a b";
+	}
+	
+	.banner p {
+		grid-area: b;
+		margin: 1rem 0.7rem 1rem 1rem;
+		font-size: 1.5rem;
+		padding: 0 0 0 0;
+		line-height: normal;
+		text-align: justify;
+	}
+	
+	.banner span {
+		font-size: 2.5rem;
+	}
+	
+	.banner img {
+		max-width: 300px;
+		height: auto;
+		grid-area: a;
+		margin: 1rem 0 1rem 0;
+	}
+	
+	/* Portfolio */
+	
+	.portfolioicons {
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	.portelement {
+		width: 17rem;
+		height: 11rem;
+		display: grid;
+		justify-items: center;
+		align-items: center;
+	}
+	
+	.portelement h3 {
+		font-weight: 600;
+		font-size: 1rem;
+	}
+
+	.portelement p {
+		margin-top: 0.3rem;
+	}
+
+	.portelement img {
+		width: 15rem;
+		height: auto; 
+	};
+
+	.footer {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"copyright";
+		height: 3rem;
+	}
+	
+	.copyright {
+		grid-area: copyright;
+		color: #908989;
+		margin-left: -5rem;
+	}
+}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+@media (max-width: 768px) and (min-width: 601px) {
+	.container {
+		max-width: 768px;
+		display: grid;
+		grid-template-columns: 380px 380px ;
+		grid-template-areas:
+		"header header"
+		"banner banner"
+		"portfolioicons portfolioicons"
+		"footer footer";
+		row-gap: 0.5rem;
+		background-color: #fafafaef;
+	}
+	
+	.header {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+		"logo nav";
+	}
+	
+	.header img {
+		justify-self: center;
+	}
+	
+	.header nav{
+		grid-template-areas: 
+		"home about works hire";
+		justify-self: center;	
+	}
+	
+	.header nav a{    
+		font-size: 1rem;
+	}
+	
+	
+	/* Banner */
+	
+	.banner {
+		grid-template-columns: 1fr 1fr;
+		max-width: 768px;
+	}
+	
+	.banner p {
+		margin: 0 1rem 0.5rem 0;
+		font-size: 1.7rem;
+		padding: 0rem 0rem 0rem 0rem;
+		line-height: normal;
+		text-align: justify;
+	}
+	
+	.banner span {
+		font-size: 4rem;
+		color: red;
+		line-height: normal;
+	}
+	
+	.banner img {
+		margin: 0.5rem 0 0 1rem;
+		max-width: 380px;
+		height: auto;
+	}
+	
+	/* Portfolio */
+
+		
+	.portfolioicons {
+		grid-template-columns: 1fr 1fr;
+		gap: 0.5rem;
+		justify-content: center;
+		align-content: center;
+		justify-items: center;
+		background-color: none;
+	}
+
+	.portelement {
+		width: 19rem;
+		height: 12rem;
+		display: grid;
+		background-color: white;
+		justify-content: center;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.portelement h3 {
+		font-weight: 600;
+	}
+
+	.footer {
+		grid-template-columns: 1fr;
+		grid-template-areas:
+		"copyright";
+		height: 3rem;
+	}
+	
+	.copyright {
+		
+		margin-left: 3rem;
+	}
+		
+}
+
+@media (max-width: 1024px) and (min-width: 769px)  {
+	
+.container {
+	max-width: 1024px;
+    display: grid;
+	grid-template-columns: 1fr 3.75fr 1fr;
+	grid-template-areas:
+	"header header header"
+	". banner ."
+	". portfolioicons ."
+	"footer footer footer";
+	row-gap: 0.5rem;
+	background-color: #fafafaef;
+}
+
+.header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "logo nav";
+}
+
+.header img {
+   	align-self: center;
+	justify-self: center;
+}
+
+/* Banner */
+
+.banner {
+	grid-template-columns: 1fr 1fr;
+}
+
+.banner p {
+	margin: 0rem 0 0.3rem 0.5rem;
+    font-size: 1.81rem;
+    line-height: 1.5;
+    color: #0a3055;
+   	padding-right: 2rem;
+	text-align: justify;
+}
+
+.banner span {
+	font-size: 5rem;
+}
+
+.banner img {
+	margin: 0.5rem 0 0.5rem 1rem;
+	max-width: 500px;
+	height: auto;
+	align-self: center;
+}
+
+.footer {
+	grid-template-columns: 1fr;
+	grid-template-areas:
+	"copyright";
+	height: 3rem;
+}
+
+.copyright {
+	margin-left: 3rem;
+}
+	
+}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&& */
+
+@media (max-width: 1200px) and (min-width: 1081px) {
+		
+	.container {
+		max-width: 1200px;
+		grid-template-columns: 1fr 4fr 1fr;
+	}
+
+	.header {
+		grid-template-columns: 1fr 2fr 2fr 1fr;
+	}
+
+	/* Banner */
+
+	.banner {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.banner p {
+		margin: 1rem 0.5rem 0.5rem 0.5rem;
+		font-size: 1.82rem;
+		line-height: 1.5;
+		padding-right: 0.35rem;
+	}
+
+	.banner span {
+		font-size: 5rem;
+	}
+
+	.banner img {
+		margin: 0.5rem 0 0.5rem 1rem;
+		max-width: 500px;
+		height: auto;
+		justify-self: center;
+		align-self: center;
+	}
+
+	.footer {
+		grid-template-columns: 1fr 4fr 1fr;
+	}
+
+	.copyright {
+		margin-left: -2rem;
+	}
+	
+}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+
+@media (max-width: 1700px) and (min-width: 1201px) {
+		
+	.container {
+		grid-template-columns: 1fr 4fr 1fr;
+	}
+
+	.header {
+		grid-template-columns: 1fr 2fr 2fr 1fr;
+	}
+
+	/* Banner */
+
+	.banner {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.banner p {
+		margin: 1rem 0.5rem 0.5rem 0.5rem;
+		font-size: 1.82rem;
+		line-height: 1.5;
+		padding-right: 0.35rem;
+	}
+
+	.banner span {
+		font-size: 5rem;
+	}
+
+	.banner img {
+		margin: 0.5rem 0 0.5rem 1rem;
+		max-width: 500px;
+		height: auto;
+		justify-self: center;
+		align-self: center;
+	}
+
+	.footer {
+		grid-template-columns: 1fr 4fr 1fr;
+	}
+
+	.copyright {
+		margin-left: -2rem;
+	}
+	
+}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+
+@media (max-width: 1800px) and (min-width: 1701px) {
+		
+	.container {
+		grid-template-columns: 1fr 4fr 1fr;
+	}
+	
+}
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+@media (min-width: 2050px) {
+		
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 4fr 1fr;
+		grid-template-areas:
+		"header header header"
+		". banner ."
+		". portfolioicons ."
+		"footer footer footer";
+		row-gap: 1rem;
+		background-color: #fafafaef;
+	}
+	
+	.header {
+		grid-area: header;
+		background-color: black;
+		display: grid;
+		grid-template-columns: 1fr 2fr 2fr 1fr;
+		grid-template-areas: ". logo nav .";
+	}
+	
+	.header img {
+		height: 6rem;
+		width: auto;
+		margin: 0.5rem;
+		grid-area: logo;
+	}
+	
+	.header nav{
+		grid-area: nav;
+		display: grid;
+		background-color: none;
+		justify-content:center;
+		align-items: baseline;
+		grid-template-areas: 
+		". home about works hire .";	
+	}
+	
+	.home {
+		grid-area: home;
+	}
+	
+	.about {
+		grid-area: about;
+	}
+	
+	.works {
+		grid-area: works;
+	}
+	
+	.hire {
+		grid-area: hire;
+	}
+	
+	.header nav a{    
+		text-decoration: none;
+		align-self: flex-end;
+		margin: 0 0.5rem 0 0.5rem;
+		padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+		justify-self: center;
+		color: azure;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-weight: 400;
+		font-size: 1.5rem;
+	}
+	
+	.home:hover, .about:hover, .works:hover, .hire:hover {
+		background-color: rgb(20, 19, 19);
+	}
+	
+	/* Banner */
+	
+	.banner {
+		grid-area: banner;
+		background-color: white;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	.banner p {
+		margin: 0 0 0 0;
+		font-size: 2.5rem;
+		font-family: 'Niconne', cursive;
+		line-height: 2;
+		color: #0a3055;
+		font-weight: 500;
+		text-align: justify;
+	}
+	
+	.banner span {
+		font-size: 7rem;
+		color: red;
+		line-height: normal;
+	}
+	
+	.banner img {
+		margin: 1rem 0 0 0;
+		justify-self: center;
+		align-self: center;
+	}
+	
+	/* Portfolio */
+	
+	.portfolioicons {
+		grid-area: portfolioicons;
+		height: max-content;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		column-gap: 0.5rem;
+		row-gap: 1.7rem;
+		justify-content: center;
+		align-content: center;
+		justify-items: center;
+	}
+	
+	.portelement {
+		width: 85%;
+		height: 99%;
+		display: grid;
+		background-color: white;
+		justify-content: center;
+		margin-top: 0rem;
+		margin-bottom: 1rem;
+	}
+
+	
+	.portelement h3 {
+		font-weight: 700;
+		font-size: 1.2rem;
+		text-align: center;
+	}
+
+	.portelement p {
+		font-size: 1rem;
+		text-align: center;
+		font-weight: 600;
+	}
+
+	.portelement img {
+		width: 22rem;
+		height: auto;
+		justify-self: center;
+	}
+
+	.footer {
+		grid-area: footer;
+		display: grid;
+		grid-template-columns: 1fr 3.75fr 1fr;
+		grid-template-areas:
+		". copyright .";
+		height: 5rem;
+		background-color: #f5f5f5;
+	}
+	
+	.copyright {
+		grid-area: copyright;
+		color: #908989;
+		margin-top: 1rem;
+		font-weight: 800;
+		font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		font-size: 1.3rem;
+	}
+	
+}
